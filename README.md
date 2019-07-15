@@ -134,11 +134,6 @@ If you are running a web server, securing against PoisonTap is simple:
 * Locking your computer has **no effect** as the network and USB stacks operate while the machine is locked, however, going into an encrypted sleep mode where a key is required to decrypt memory (e.g., FileVault2 + deep sleep) solves most of the issues as your browser will no longer make requests, even if woken up
 
 -----
-# Download
-
-**Source code:** <a href="https://github.com/samyk/poisontap" target=_blank>https://github.com/samyk/poisontap</a>
-
------
 
 # Installation / File Breakdown
 
@@ -163,8 +158,6 @@ apt-get -y install isc-dhcp-server dsniff screen nodejs
 ```
 
 Place dhcpd.conf in /etc/dhcp/dhcpd.conf and the rest of the files in /home/pi/poisontap, then reboot to ensure everything is working.
-
-There are a number of <a href="https://github.com/samyk/poisontap" target=_blank>files in the repo</a>, which are used on different sides. The list:
 
 * **backdoor.html** - Whenever a http://hostname/PoisonTap URL is hit to exfiltrate cookies, this file is what is returned as the force-cached content. It contains a backdoor that produces an outbound websocket to samy.pl:1337 (adjustable to any host/port) that remains opens waiting for commands from the server. This means when you load an iframe on a site, such as http://hostname/PoisonTap, this is the content that gets populated (even after PoisonTap is removed from the machine).
 * **backend_server.js** - This is the Node.js server that you run on your Internet-accessible server. It is what the backdoor.html connects to (eg, samy.pl:1337). This is the same server you connect to send commands to your PoisonTapped minion machines, eg
