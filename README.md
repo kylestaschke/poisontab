@@ -13,10 +13,6 @@ When poisontab is plugged into a **locked/password protected** computer, it:
 * does **not** require the machine to be unlocked
 * backdoors and remote access persist **even after device is removed** and attacker sashays away
 
-![PoisonTap](https://samy.pl/poisontap/cropped6.gif)
-
-*(incredible HTML5 canvas animation by <a href="https://codepen.io/ara_node/" target="_blank">Ara</a>)*
-
 ### PoisonTap evades the following security mechanisms:
 
 * <a href="https://www.wikiwand.com/en/Lock_screen" target=_blank>Password Protected Lock Screens</a>
